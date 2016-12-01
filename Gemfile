@@ -61,3 +61,7 @@ group :development do
 # generate files for an application layout
   gem 'rails_layout'
 end
+
+group :production do
+  gem 'pg', '0.18.4'
+end
