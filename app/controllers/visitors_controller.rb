@@ -8,7 +8,6 @@ class VisitorsController < ApplicationController
     @visitor = Visitor.new(secure)
     if @visitor.valid?
       @visitor.subscribe
-      flash[:notice] = "Signed up #{@visitor.email}."
       redirect_to root_path
     else
       render :new

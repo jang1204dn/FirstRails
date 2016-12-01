@@ -9,8 +9,10 @@ class Visitor
     result = mailchimp.lists(list_id).members.create(
     body: {
       email_address: self.email,
-      status: 'subscibed'
+      status: 'subscribed',
+      merge_fields: {FNAME: "First Name", LNAME: "Last Name"}
     })
+    
     Rails.logger.info("subscrubed #{self.email} to mailchimp") if result
   end
 end
